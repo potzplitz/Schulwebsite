@@ -313,6 +313,17 @@ body {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white; 
 }
+
+.MapInfo {
+   border-radius: 20px;
+   margin-left: 270px;
+
+   margin-top: 20px;
+   width: 1000px;
+   height: 100px;
+   overflow: hidden;
+   background-color:#1b1447;
+}
  
 
 

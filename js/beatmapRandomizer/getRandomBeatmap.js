@@ -43,8 +43,7 @@ function showImage(result) {
   $("#beatmapimg").attr("src", "https://assets.ppy.sh/beatmaps/" + result.beatmapset_id + "/covers/card.jpg");
   $("#BeatmapName").text(result.title);
   $("#TitleP").text(result.title);
-  $("#ArtistP").text(result.creator);
-  dfdf
+  $("#ArtistP").text(result.creator);E
 }
 
 // In osu!direct öffnen
