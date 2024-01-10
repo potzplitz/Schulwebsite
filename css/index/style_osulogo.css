@@ -1,0 +1,107 @@
+/*Verhindert Scrollen*/
+body{
+    overflow: hidden;
+}
+
+/*Für das Pulsieren des Kreises*/
+.pulse{
+    width: 600px;
+    height: 600px;
+}
+
+.pulse{
+    animation: pulse linear 1s infinite;
+    position: relative;
+}
+
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    100% {
+        -webkit-transform: scale(1);
+       transform: scale(1);
+    }
+}
+
+/*Für die Puls-Welle (ausgehend vom Kreis)*/
+.pulse_ring{
+    z-index: 1;
+    height: 600px;
+    width: 600px;
+    background: rgb(244, 243, 243);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.pulse_ring::before,
+.pulse_ring::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: plum;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.pulse_ring::before{
+    animation: pulse_ring 1s ease-out infinite;
+}
+
+.pulse_ring::after{
+    animation: pulse_ring 1s ease-out infinite;
+}
+
+@keyframes pulse_ring{
+    100%{
+        transform: scale(1.25);
+        opacity: 0;
+    }
+}
+
+/*Styling der Buttons*/
+.osu_buttons{
+    z-index: 0;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    height: 480px;
+}
+
+#play_button,
+#exit_button{
+    height: 100px;
+    width: 430px;
+    opacity: 0%;
+}
+
+#edit_button,
+#options_button{
+    height: 100px;
+    width: 430px;
+    opacity: 0%;
+    margin-left: 130px;
+}
+
+#play_button:hover,
+#edit_button:hover,
+#options_button:hover,
+#exit_button:hover{
+    transform: scale(1.1);
+    filter: brightness(1.5) hue-rotate(30deg);
+    transition: 0.3s ease, filter 0.3s ease;
+}

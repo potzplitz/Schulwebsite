@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title id="titel">Profil von Name</title>
+    <link rel="stylesheet" type="text/css" href="../../css/profileViewer/stylesheet.css">
+    <link rel="icon" href="../../rsc/index/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <script src="../../js/misc/AccessMe.js"></script>    
+    <script type="module" src="../../js/pv/ProfileViewer.js"></script> 
+</head>
+<body>
+    <div class="oben">
+        <div class="titel"> 
+            <p id="infoLaptop">Auf Laptop auf 80% zoomen</p>            
+         <div class="account">
+            <div class="pic">
+                <img id="accountPic" src="../../rsc/index/defaultPFP.png">
+            </div>
+            <p id="apiName">Lädt...</p>
+        </div>
+        <a href="../../html/index/index.html"><img src="../../rsc/index/logo.png" class="logo"></a>
+    </div>
+    </div>
+    <div class="unten" >
+        <input type="text" id="searchField" name="benutzername">
+        <button id="searchButton">Suchen</button>
+        <div class="profilelist" id="visible">
+            <div class="playerinfo">
+                <div class="profilePictureDiv">
+                    <img class="pvProfilePicture" src="../../rsc/index/defaultPFP.png">    
+                </div>       
+                <p id="PlayerName">Name</p>
+            </div>
+            <div class="Ranking">
+                <div id="chartContainer" style="width: 600px; height: 400px;">
+                    <canvas id="myChart"></canvas>
+                </div>
+        </div>
+        <div class="GlobalRank">
+            <p id="GlobalRankP">Globaler Rang</p>
+            <p id="pp">pp</p>
+        </div>
+        <div class="CountryRank">
+            <p id="CountryRankP">Landesrangliste</p>
+        </div>
+        <div class="PlayTime">
+            <p id="PlayTimeP">Spielzeit</p>
+        </div>
+        <div class="banner">
+            <img class="bannerImg">
+        </div>
+        <div class="badge1">
+            <img class="badge1img">
+        </div>
+        <div class="badge2">
+            <img class="badge2img">
+        </div>
+        <div class="badge3">
+            <img class="badge3img">
+        </div>
+        <div class="userInfo">
+            <p id="userInfoP"></p>
+        </div>
+    </div>
+    <div class="footer">
+    <p id="footmessage">© 2023 Jan Schilfahrt. Alle Rechte vorbehalten.</p>
+    <div class="creditsDiv">
+    <p id="credits">Credits</p>
+    </div>
+    </div>
+</body>
+</html>
