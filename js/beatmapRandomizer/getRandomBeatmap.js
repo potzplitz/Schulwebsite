@@ -17,6 +17,7 @@ function main() {
 
 }
 
+// wenn generieren button gedrückt wird, werden daten aus der Datenbank geholt
 function onPress() {
   const urlParams = new URLSearchParams(window.location.search);
   let page = urlParams.get('page');
@@ -62,7 +63,7 @@ function openBrowserFromResult() {
   let id = $('#browser').data('beatmapset_id');
   if (id) {
       console.log(id);
-      window.location.href = "https://osu.ppy.sh/beatmaps/" + id;
+      window.location.href = "https://osu.ppy.sh/beatmapsets/" + id;
   } else {
       console.error("Beatmapset ID not available.");
   }
