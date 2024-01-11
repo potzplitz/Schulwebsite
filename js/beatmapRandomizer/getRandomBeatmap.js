@@ -3,15 +3,15 @@ $(document).ready(function() {
 });
 
 function main() {
-  $('#randomize').click(function() {
+  $('#randomize').click(function() { // wenn der button #randomize gedrückt wird wid onPress() ausgeführt
       onPress();
   });
 
-  $('#direct').click(function() {
+  $('#direct').click(function() { // wenn der button #direct gedrückt wird wid openDirectFromResult() ausgeführt
       openDirectFromResult();
   });
 
-  $('#browser').click(function() {
+  $('#browser').click(function() { // wenn der button #browser gedrückt wird wid openBrowserFromResult() ausgeführt
     openBrowserFromResult();
 });
 

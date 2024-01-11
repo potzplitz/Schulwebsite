@@ -12,11 +12,14 @@ if ($authorizationCode !== null) {
     echo 'Autorisierungscode nicht erhalten.';
 }
 
+
+// client credencials werden angegeben
 $clientId = '28681';
 $clientSecret = '5QU0Nmjanz70e8ntyPwk39SJEoax2q42VXutsaaR';
 $receivedCode = $authorizationCode;
 $redirectUri = 'http://localhost/php/callback.php'; // Passe die Redirect-URI entsprechend an
 
+// access token suchparameter werden angegeben
 $tokenRequest = [
     'client_id' => $clientId,
     'client_secret' => $clientSecret,
@@ -25,6 +28,7 @@ $tokenRequest = [
     'redirect_uri' => $redirectUri
 ];
 
+// api zugriff mit parametern
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, 'https://osu.ppy.sh/oauth/token');
@@ -47,6 +51,7 @@ if ($tokenResponse === false) {
     echo 'Fehler: ' . curl_error($ch);
 } else {
 
+    // me daten werden gefetcht
     $tokenResponseNormal = $tokenResponse;
 
     $tokenResponse = json_decode($tokenResponse, true);
@@ -72,6 +77,8 @@ if ($tokenResponse === false) {
         $responseName = file_get_contents($apiEndpointMe, false, $context);
 
         $responseName = json_decode($responseName, true);
+
+        // daten des zugriffs werden in eienm textdokument fürs nächste mal gespeichert
 
         if (isset($responseName['username'])) {
             $username = $responseName['username'];

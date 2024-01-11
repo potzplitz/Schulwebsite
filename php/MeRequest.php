@@ -1,13 +1,14 @@
 <?php
 
-include('refreshchecker.php');
+include('refreshchecker.php'); // es wird überprüft ob das access token noch gültig ist
 
-$lastUser = $_COOKIE['name'];
+$lastUser = $_COOKIE['name']; // cookie name wird als variable gespeichert
 
-if(!$lastUser) {
+if(!$lastUser) { // wenn cookie nicht vorhanden ist wird 404 ausgegeben
     http_response_code(404);
 } else {
 
+    // access token wird sich aus der txt geholt
 $responseFile = file_get_contents("UserDB/ApiTokens/request_" . $lastUser . ".txt");
 $responseData = json_decode($responseFile, true);
 

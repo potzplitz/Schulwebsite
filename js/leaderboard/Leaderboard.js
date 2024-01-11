@@ -3,6 +3,7 @@ $(document).ready(function() {
     clickArrowButtons();
 });
 
+// rankRequest.php wird aufgerufen und so auf die osu!api zugegriffen
 function access() {
     const urlParams = new URLSearchParams(window.location.search);
     let page = urlParams.get('page'); 
@@ -23,27 +24,30 @@ function access() {
     });
 }
 
+ // seitenwechselbuttons
 function clickArrowButtons() {
 
     const urlParams = new URLSearchParams(window.location.search);
     let page = urlParams.get('page'); 
 
-    if((parseInt(page) - 1) <= 0) {
+    if((parseInt(page) - 1) <= 0) { // wenn auf seite 0, dann wird der button #backwards ausgeblendet.
         $('#backwards').hide();
     } else {
         $('#backwards').show();
     }
 
-    if((parseInt(page) + 1) >= 200) {
+    if((parseInt(page) + 1) >= 200) { // wenn auf seite 200, dann wird der button #forward ausgeblendet.
         $('#forward').hide();
     } else {
         $('#forward').show();
     }
 
+    // seitenzahl wird auf buttons geschrieben
     $('#backwards').text('← Seite ' + (parseInt(page) - 1));
     $('#forward').text('Seite ' + (parseInt(page) + 1) + " →");
     $('#currentpage').text('Seite ' + page);
     
+    // event listeners für die buttons
         $('#backwards').click(function() {
             window.location.href = '../../html/leaderboard/Leaderboard.html?page=' + (parseInt(page) - 1);
         });
@@ -61,12 +65,14 @@ function clickArrowButtons() {
         });
 }
 
+// daten von der osu! api werden hier verarbeitet
 function phraseJson(JsonString) {
     let parsedData = JSON.parse(JsonString);
     let Json = parsedData.ranking;
 
     const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
 
+    // verarbeitete elemente werden in die tabelle hinzugefügt
     Json.forEach(entry => {
         const row = tableBody.insertRow();
         const ppCell = row.insertCell(0);
@@ -81,11 +87,7 @@ function phraseJson(JsonString) {
     });
 }
 
-function tableClick() {
-    $('#dataTable th').click(function() {
-    });
-}
-
+// wenn ein tabellensatz angeklickt wird, kommt man auf das profil des spielers
 function rowClick() {
     $('#dataTable tbody tr').click(function() {
         const playerName = $(this).find('td:eq(1)').text(); 

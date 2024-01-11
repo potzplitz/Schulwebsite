@@ -1,3 +1,5 @@
+
+// daten der api werden hier verarbeitet
 function apiPhrase() {
     const value = getParameterValue('name');
     let meinTextfeld = document.getElementById('searchField');
@@ -15,6 +17,7 @@ function apiPhrase() {
     });
 }
 
+// verarbeitete daten werden dem profileviewer hinzugefügt
 function parse(string) {
     let parsedData = JSON.parse(string);
 
@@ -26,7 +29,7 @@ function parse(string) {
     $("#pp").text("(" + parsedData.statistics.pp + "pp)");
     $(".bannerImg").attr("src", parsedData.cover.url);
 
-    if (parsedData.badges.length >= 3) {
+    if (parsedData.badges.length >= 3) { // wenn mindestens 3 tournament badges vorhanden sind, werden diese hinzugefügt.
 
     $(".badge1img").attr("src", parsedData.badges[0]['image@2x_url']);
     $(".badge2img").attr("src", parsedData.badges[1]['image@2x_url']);
@@ -50,6 +53,7 @@ function parse(string) {
     ShowObjects();
 }
 
+// der graph des ranges wird hinzugefügt (library: ChartJS)
 function graph(jsonString) {
 
     const dataObj = jsonString; 
@@ -86,16 +90,20 @@ function graph(jsonString) {
     });
 }
 
+// in der adresszeile übergebener wert wird hier ausgegeben und in einer variable gespeichert
 function getParameterValue(parameterName) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(parameterName);
 }
 
+// wert aus der suchleiste des profileviewers wird hier in einer variable gespeichert
 function getParameterValueTextFeld() {
     let meinTextfeld = document.getElementById('searchField');
     let wertAusTextfeld = meinTextfeld.value;
     return(wertAusTextfeld);
 }
+
+// suche nach spieler wird ausgeführt und somit mit der ProfileRequest.php daten von der osu!api geholt
 function performSearch() {   
     const value = getParameterValueTextFeld();
         
@@ -111,6 +119,8 @@ function performSearch() {
             }
         });
 }
+
+// suche nach spieler wird ausgeführt und somit mit der ProfileRequest.php daten von der osu!api geholt, bloß mit wert der suchleiste
 function searchWithParameter() {
     const value = getParameterValue('name');
     if (value) {     
@@ -135,6 +145,7 @@ $(document).ready(function() {
     });
 });
 
+// ganz am schluss wenn es fertig ist, werden die elemente sichtbar gemacht
 function ShowObjects() {
     $('#visible').css('visibility', 'visible');    
 }

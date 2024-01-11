@@ -2,6 +2,7 @@ $(document).ready(function() {
     accessMe();
   });
   
+  // MeRequest.php wird aufgerufen und so auf die osu!api zugegriffen
   function accessMe() {
         $.ajax({
             type: "GET",
@@ -18,7 +19,7 @@ $(document).ready(function() {
         });
   }
 
-
+ // daten der api werden verarbeitet
   function phraseJsonMe(JsonString) {
 
     console.log(JsonString);
@@ -32,6 +33,7 @@ $(document).ready(function() {
 
   }
   
+  // wenn die authentifizierung fehlgeschlagen hat, wird dazu aufgefordert, sich erneut zu authentifizieren.
   function failed() {
   
     $("#apiName").text("Anmelden");
@@ -40,6 +42,7 @@ $(document).ready(function() {
 
   }
 
+  // verarbeitete daten werden auf der website hinzugefügt
   function addValueMe(BildURL, PlayerName, rank, uid) {
 
 
