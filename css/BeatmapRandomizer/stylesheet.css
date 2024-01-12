@@ -162,16 +162,11 @@ body {
  }
  
  .start {
- 
     width: 90%;
     height: 1700px;
- 
     background: linear-gradient(to bottom, #1e1935, #2a2458);
- 
     margin: 0 auto;
- 
     border-radius: 20px;
-    
  }
  
  #osuGamemodes {
@@ -236,7 +231,7 @@ body {
 
 .randomizer {
     width: 80%;
-    height: 1000px;
+    height: 330px;
 
     margin-top: 200px;  
  
@@ -314,17 +309,68 @@ body {
   color: white; 
 }
 
-.MapInfo {
+ 
+.tags {
    border-radius: 20px;
-   margin-left: 270px;
+   margin-left: 623px;
 
-   margin-top: 20px;
-   width: 1000px;
+   margin-top: -100px;
+   width: 300px;
    height: 100px;
    overflow: hidden;
    background-color:#1b1447;
 }
- 
 
+.pp {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around; /* Gleichmäßige Verteilung der Elemente */
+   align-items: flex-start; /* Ausrichtung am Anfang (links) */
+   border-radius: 20px;
+   margin-left: 970px;
+   margin-top: -100px;
+   width: 300px;
+   height: 100px;
+   overflow: hidden;
+   background-color:#1b1447;
+   padding: 10px; /* Fügt innen etwas Platz hinzu */
+   box-sizing: border-box; /* Stellt sicher, dass Padding und Border im Gesamtmaß enthalten sind */
+}
+
+.pp p {
+   margin: 0; /* Entfernt individuelle Margins */
+   font-size: 13px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: white; 
+}
+
+.MapInfo {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around; /* Gleichmäßige Verteilung der Elemente */
+   align-items: flex-start; /* Ausrichtung am Anfang (links) */
+   border-radius: 20px;
+   margin-left: 270px;
+   margin-top: 20px;
+   width: 300px;
+   height: 100px;
+   background-color: #1b1447;
+   padding: 10px; /* Fügt innen etwas Platz hinzu */
+   box-sizing: border-box; /* Stellt sicher, dass Padding und Border im Gesamtmaß enthalten sind */
+}
+
+.MapInfo p {
+   margin: 0; /* Entfernt individuelle Margins */
+   font-size: 13px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: white; 
+}
+
+#tags {
+   margin: 0; /* Entfernt individuelle Margins */
+   font-size: 13px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: white; 
+}
 
                              

@@ -44,7 +44,28 @@ function showImage(result) {
   $("#beatmapimg").attr("src", "https://assets.ppy.sh/beatmaps/" + result.beatmapset_id + "/covers/card.jpg");
   $("#BeatmapName").text(result.title);
   $("#TitleP").text(result.title);
-  $("#ArtistP").text(result.creator);E
+  $("#ArtistP").text(result.creator);
+  $("#ArtistP").text(result.creator);
+  
+  // beatmap info
+
+  $("#sr").text("Star rating: " + result.difficulty_rating + "⭐");
+  $("#ar").text("Approach Rate: " + result.ar);
+  $("#bpm").text("BPM: " + result.bpm);
+  $("#length").text("Länge: " + result.hit_length + " sek.");
+
+  // tags
+  $("#tags").text("Tags: " + result.tags);
+
+  // pp
+
+  $("#ppDT").text("DT 100%: " + result.ppdata.dt.pp.p_100.toFixed(2) + " 99%: " + result.ppdata.dt.pp.p_99.toFixed(2) + " 98%: " + result.ppdata.dt.pp.p_98.toFixed(2));
+  $("#ppHD").text("HD 100%: " + result.ppdata.hd.pp.p_100.toFixed(2) + " 99%: " + result.ppdata.hd.pp.p_99.toFixed(2) + " 98%: " + result.ppdata.hd.pp.p_98.toFixed(2));
+  $("#ppHR").text("HR 100%: " + result.ppdata.hr.pp.p_100.toFixed(2) + " 99%: " + result.ppdata.hr.pp.p_99.toFixed(2) + " 98%: " + result.ppdata.hr.pp.p_98.toFixed(2));
+  
+
+  console.log(result.ppdata);
+
 }
 
 // In osu!direct öffnen
