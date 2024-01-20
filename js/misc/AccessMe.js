@@ -8,9 +8,6 @@ $(document).ready(function() {
             type: "GET",
             url: "../../php/MeRequest.php", 
             success: function(response) {
-
-              console.log(response);
-
                     phraseJsonMe(response); 
             },
             error: function(xhr, status, error) {

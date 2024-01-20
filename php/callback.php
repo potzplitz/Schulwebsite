@@ -1,8 +1,6 @@
 <?php
 // Speichere den Autorisierungscode in einer Variable, wenn er vorhanden ist
 
-
-
 $authorizationCode = isset($_GET['code']) ? $_GET['code'] : null;
 
 // Gib den Autorisierungscode aus
