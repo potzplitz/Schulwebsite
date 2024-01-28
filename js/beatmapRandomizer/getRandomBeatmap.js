@@ -24,7 +24,7 @@ function onPress() {
 
   $.ajax({
       type: "GET",
-      url: "../../php/BeatmapRandomizer.php",
+      url: "http://localhost:8080",
       success: function(response) {
           console.log(response);
           let result = JSON.parse(response);
@@ -34,7 +34,7 @@ function onPress() {
           showImage(result);
       },
       error: function(xhr, status, error) {
-          failed();
+          console.log("fail");
       }
   });
 }
