@@ -15,7 +15,7 @@ if ($authorizationCode !== null) {
 $clientId = '28681';
 $clientSecret = '5QU0Nmjanz70e8ntyPwk39SJEoax2q42VXutsaaR';
 $receivedCode = $authorizationCode;
-$redirectUri = 'http://localhost/php/callback.php'; // Passe die Redirect-URI entsprechend an
+$redirectUri = 'http://10.1.213.16/php/callback.php'; // Passe die Redirect-URI entsprechend an
 
 // access token suchparameter werden angegeben
 $tokenRequest = [
@@ -76,16 +76,17 @@ if ($tokenResponse === false) {
 
         $responseName = json_decode($responseName, true);
 
-        // daten des zugriffs werden in eienm textdokument fürs nächste mal gespeichert
+        // daten des zugriffs werden in eienm textdokument fürs nächste mal gespeicherT
 
         if (isset($responseName['username'])) {
+            
             $username = $responseName['username'];
+
+            setcookie("name", $username, time() + (10 * 365 * 24 * 60 * 60));
 
             file_put_contents('UserDB/ApiTokens/request_' . $username . '.txt', $tokenResponseNormal);
             file_put_contents('UserDB/ApiRequestTime/time_' . $username . '.txt', time());
             
-            setcookie("name", $username, time() + (10 * 365 * 24 * 60 * 60));
-
             header('Location: ../html/index/index.html');
             exit();
         } else {

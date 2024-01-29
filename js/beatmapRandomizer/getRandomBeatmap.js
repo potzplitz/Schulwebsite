@@ -24,7 +24,7 @@ function onPress() {
 
   $.ajax({
       type: "GET",
-      url: "http://localhost:8080",
+      url: "http://10.1.213.16:8080",
       success: function(response) {
           console.log(response);
           let result = JSON.parse(response);
