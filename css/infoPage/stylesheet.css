@@ -41,22 +41,23 @@ body {
  }
  
  .account {
-    width: 13%;
-    border-radius: 20px;
-    position: absolute;
-    top: 10px;
-    right: 1%;
-    display: flex;
-    align-items: center;
-    padding: 10px;
- 
-    background-color:#1b1447;
- 
-   float: right;
- 
-   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- 
-    cursor: pointer;
+   width: 13%;
+   border-radius: 20px;
+   position: absolute;
+   top: 6px;
+   right: 1%;
+   display: flex;
+   align-items: center;
+   padding: 10px;
+
+   background-color:#1b1447;
+
+  float: right;
+
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+   cursor: pointer;
+   box-shadow: 5px 5px 5px #1e1935;
  }
  
  .pic {
@@ -240,6 +241,7 @@ body {
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 20px;
+    box-shadow: 5px 5px 5px #1e1935;
 }
 
 #std {
@@ -251,6 +253,7 @@ body {
     margin-top: 50px;
     text-align: justify;   
     position: relative;
+    box-shadow: 5px 5px 5px #1e1935;
 }
 
 #mania {
@@ -260,6 +263,7 @@ body {
    border-radius: 20px;
    margin: 0 auto;
    margin-top: 50px;
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 #taiko {
@@ -269,6 +273,7 @@ body {
    border-radius: 20px;
    margin: 0 auto;
    margin-top: 50px;
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 #catch {
@@ -278,6 +283,7 @@ body {
    border-radius: 20px;
    margin: 0 auto;
    margin-top: 50px;
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 
