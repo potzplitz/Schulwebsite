@@ -1,7 +1,8 @@
 body {
-    background-color: #18171c;
+   background-color: #18171c;
     text-align: center;
     margin: 0;
+    box-shadow: 60px, 5px, 5px, #1e1935;
  }
  
  h1 {
@@ -42,7 +43,7 @@ body {
     width: 13%;
     border-radius: 20px;
     position: absolute;
-    top: 10px;
+    top: 6px;
     right: 1%;
     display: flex;
     align-items: center;
@@ -55,6 +56,8 @@ body {
    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  
     cursor: pointer;
+    box-shadow: 5px 5px 5px #1e1935;
+    
  }
  
  .pic {
@@ -131,7 +134,7 @@ body {
     overflow: auto;
     border-radius: 20px;
  
- 
+   
  }
  
  .logo {
@@ -241,7 +244,7 @@ body {
 
    padding-top: 18px;
    
-
+   box-shadow: 5px 5px 5px #221c3c;
 }
 
 #searchButton {
@@ -280,6 +283,8 @@ body {
    overflow: hidden;
 
    margin-left: 2px;
+
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 #PlayerName {
@@ -315,6 +320,8 @@ body {
 
   cursor: pointer;
 
+  
+  box-shadow: 5px 5px 5px #1e1935;
 }
 
 #visible {
@@ -334,10 +341,11 @@ body {
 
    background-color:#1b1447;
 
-   margin-left: 350px;
+   margin-left: 355px;
    margin-top: -97px;
 
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 5px 5px 5px #1e1935;
 
 }
 
@@ -383,6 +391,7 @@ body {
 
   padding-top: 17px;
   padding-bottom: 17px;
+  box-shadow: 5px 5px 5px #1e1935;
 }
 
 #GlobalRankP {
@@ -407,6 +416,7 @@ body {
 
   padding-top: 17px;
   padding-bottom: 17px;
+  box-shadow: 5px 5px 5px #1e1935;
 }
 
 #CountryRankP {
@@ -431,6 +441,7 @@ body {
 
   padding-top: 17px;
   padding-bottom: 17px;
+  box-shadow: 5px 5px 5px #1e1935;
 }
 
 #PlayTimeP {
@@ -472,6 +483,7 @@ body {
 
   padding-top: 17px;
   padding-bottom: 17px;
+  box-shadow: 5px 5px 5px #1e1935;
 }
 
 .badge1 {
@@ -481,12 +493,12 @@ body {
 
    background-color:#1b1447;
 
-   margin-left: 980px;
+   margin-left: 985px;
    margin-top: 40px;
 
    border-radius: 20px;
    overflow: hidden;
-
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 .badge2 {
@@ -496,12 +508,12 @@ body {
 
    background-color:#1b1447;
 
-   margin-left: 1155px;
+   margin-left: 1160px;
    margin-top: -75px;
 
    border-radius: 20px;
    overflow: hidden;
-
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 .badge3 {
@@ -511,12 +523,13 @@ body {
 
    background-color:#1b1447;
 
-   margin-left: 1330px;
+   margin-left: 1335px;
    margin-top: -75px;
 
    border-radius: 20px;
 
    overflow: hidden;
+   box-shadow: 5px 5px 5px #1e1935;
 
 }
 
@@ -536,11 +549,12 @@ body {
 
    background-color:#1b1447;
 
-   margin-left: 970px;
+   margin-left: 987px;
    margin-top: 25px;
 
    border-radius: 20px;
-
+   
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 #userInfoP {

@@ -42,10 +42,10 @@ body {
  }
  
  .account {
-    width: 13%;
+   width: 13%;
     border-radius: 20px;
     position: absolute;
-    top: 10px;
+    top: 6px;
     right: 1%;
     display: flex;
     align-items: center;
@@ -58,6 +58,7 @@ body {
    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  
     cursor: pointer;
+    box-shadow: 5px 5px 5px #1e1935;
  }
  
  .pic {
@@ -227,6 +228,7 @@ body {
     margin-bottom: 20px;
  
     color: #FFFF;
+    box-shadow: 5px 5px 5px #1e1935;
 }
 
 .randomizer {
@@ -249,6 +251,7 @@ body {
    height: 100px;
    overflow: hidden;
    background-color:#1b1447;
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 #browser {
@@ -291,6 +294,7 @@ body {
    height: 100px;
    overflow: hidden;
    background-color:#1b1447;
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 #TitleP {
@@ -319,6 +323,7 @@ body {
    height: 100px;
    overflow: hidden;
    background-color:#1b1447;
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 .pp {
@@ -335,6 +340,7 @@ body {
    background-color:#1b1447;
    padding: 10px; /* Fügt innen etwas Platz hinzu */
    box-sizing: border-box; /* Stellt sicher, dass Padding und Border im Gesamtmaß enthalten sind */
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 .pp p {
@@ -357,6 +363,7 @@ body {
    background-color: #1b1447;
    padding: 10px; /* Fügt innen etwas Platz hinzu */
    box-sizing: border-box; /* Stellt sicher, dass Padding und Border im Gesamtmaß enthalten sind */
+   box-shadow: 5px 5px 5px #1e1935;
 }
 
 .MapInfo p {

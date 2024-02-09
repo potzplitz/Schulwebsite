@@ -15,7 +15,7 @@ if ($authorizationCode !== null) {
 $clientId = '28681';
 $clientSecret = '5QU0Nmjanz70e8ntyPwk39SJEoax2q42VXutsaaR';
 $receivedCode = $authorizationCode;
-$redirectUri = 'http://10.1.213.16/php/callback.php'; // Passe die Redirect-URI entsprechend an
+$redirectUri = 'http://localhost/php/callback.php'; // Passe die Redirect-URI entsprechend an
 
 // access token suchparameter werden angegeben
 $tokenRequest = [

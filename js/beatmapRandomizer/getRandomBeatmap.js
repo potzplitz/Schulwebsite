@@ -2,6 +2,8 @@ $(document).ready(function() {
   main();
 });
 
+const userIP = window.location.hostname;
+
 function main() {
   $('#randomize').click(function() { // wenn der button #randomize gedrückt wird wid onPress() ausgeführt
       onPress();
@@ -24,7 +26,7 @@ function onPress() {
 
   $.ajax({
       type: "GET",
-      url: "http://10.1.213.16:8080",
+      url: "http://localhost:7727",
       success: function(response) {
           console.log(response);
           let result = JSON.parse(response);

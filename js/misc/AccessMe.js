@@ -1,6 +1,9 @@
 $(document).ready(function() {
     accessMe();
+
+
   });
+
   
   // MeRequest.php wird aufgerufen und so auf die osu!api zugegriffen
   function accessMe() {
@@ -35,7 +38,7 @@ $(document).ready(function() {
   
     $("#apiName").text("Anmelden");
     $(".account").css('background-color' , 'rgb(105, 7, 7)');
-    $('.account').wrap('<a href="https://osu.ppy.sh/oauth/authorize?client_id=28681&redirect_uri=http://10.1.213.16/php/callback.php&response_type=code&scope=identify%20public"></a>');
+    $('.account').wrap('<a href="https://osu.ppy.sh/oauth/authorize?client_id=28681&redirect_uri=http://localhost/php/callback.php&response_type=code&scope=identify%20public"></a>');
 
   }
 
