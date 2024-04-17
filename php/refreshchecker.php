@@ -5,44 +5,45 @@ $lastUser = $_COOKIE['name'];
 if(!$lastUser) {
     http_response_code(404);
 } else {
-    // daten werden aus dateien geholt
+    // Daten werden aus Dateien geholt
 
     if(!file_exists("UserDB/ApiTokens/request_" . $lastUser . ".txt") || !file_exists("UserDB/ApiRequestTime/time_" . $lastUser . ".txt")) {
         http_response_code(401);
     } else {
 
-$fileContent = file_get_contents("UserDB/ApiTokens/request_" . $lastUser . ".txt");
-$filetime = file_get_contents("UserDB/ApiRequestTime/time_" . $lastUser . ".txt");
-$responseData = json_decode($fileContent, true);
+        $fileContent = file_get_contents("UserDB/ApiTokens/request_" . $lastUser . ".txt");
+        $filetime = file_get_contents("UserDB/ApiRequestTime/time_" . $lastUser . ".txt");
+        $responseData = json_decode($fileContent, true);
 
-if ($fileContent !== false) {
+        if ($fileContent !== false) {
 
-    $tokenInfo = json_decode($fileContent, true);
+            $tokenInfo = json_decode($fileContent, true);
 
-    if ($tokenInfo !== null) {
+            if ($tokenInfo !== null) {
 
-        $accessToken = $tokenInfo['access_token'];
-        $refreshToken = $tokenInfo['refresh_token'];
-        $expirationTime = $tokenInfo['expires_in'];
+                $accessToken = $tokenInfo['access_token'];
+                $refreshToken = $tokenInfo['refresh_token'];
+                $expirationTime = $tokenInfo['expires_in'];
 
-        $currentTimestamp = time();
+                $currentTimestamp = time();
 
-        // es wird überprüft ob das access token noch valid ist
-        if ($currentTimestamp - $filetime >= $expirationTime) {
+                // Es wird überprüft, ob das Access Token noch gültig ist
+                if ($currentTimestamp - $filetime >= $expirationTime) {
 
-            header("Location: getRefreshedToken.php?wert=" . urlencode($refreshToken));
-            exit();
+                    // Rufe die andere PHP-Datei auf, um das Token zu aktualisieren
+                    require "getRefreshedToken.php";
+                    exit();
 
+                } else {
+                    // Das Token ist noch gültig
+                }
+
+            } else {
+                // Fehler beim Dekodieren der Token-Informationen
+            }
         } else {
+            // Fehler beim Lesen der Datei
         }
-
-
-    } else {
-       
     }
-} else {
-    
-}
-}
 }
 ?>
