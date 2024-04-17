@@ -1,6 +1,6 @@
 $(document).ready(function() {
     checkToken();
-    accessMe();
+    
 
 
   });
@@ -14,7 +14,7 @@ function checkToken() {
     type: "GET",
     url: "../../php/refreshchecker.php", 
     success: function(response) {
-            
+      accessMe();
     },
     error: function(xhr, status, error) {
     
