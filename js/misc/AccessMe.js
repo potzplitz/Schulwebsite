@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    checkToken();
     accessMe();
 
 
@@ -6,6 +7,21 @@ $(document).ready(function() {
 
   
   // MeRequest.php wird aufgerufen und so auf die osu!api zugegriffen
+
+function checkToken() {
+  console.log("ee");
+  $.ajax({
+    type: "GET",
+    url: "../../php/refreshchecker.php", 
+    success: function(response) {
+            
+    },
+    error: function(xhr, status, error) {
+    
+    }
+});
+}
+
   function accessMe() {
         $.ajax({
             type: "GET",

@@ -3,11 +3,12 @@
 
 $lastUser = $_COOKIE['name']; // cookie name wird als variable gespeichert
 
-include('refreshchecker.php'); // es wird überprüft ob das access token noch gültig ist
 
+if(!file_exists("UserDB/ApiTokens/request_" . $lastUser . ".txt") || !file_exists("UserDB/ApiRequestTime/time_" . $lastUser . ".txt")) {
+    http_response_code(401);
+} else {
 
-
-if(!$lastUser) { // wenn cookie nicht vorhanden ist wird 404 ausgegeben
+if($lastUser == '') { // wenn cookie nicht vorhanden ist wird 404 ausgegeben
     http_response_code(404);
 } else {
 
@@ -41,6 +42,6 @@ if ($responseData !== null && isset($responseData['access_token'])) {
         echo $responseMe;
     }
 }
-
+}
 }
 ?>
