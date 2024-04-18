@@ -64,6 +64,8 @@ if ($responseData === null || !isset($responseData['access_token'], $responseDat
 file_put_contents("UserDB/ApiTokens/request_" . $lastUser . ".txt", $response);
 file_put_contents('UserDB\ApiRequestTime\time_' . $lastUser . ".txt", time());
 
+echo "action";
+
 $accessToken = $responseData['access_token'];
 $expiresIn = $responseData['expires_in'];
 $tokenType = $responseData['token_type'];

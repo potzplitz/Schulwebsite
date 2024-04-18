@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $lastUser = $_COOKIE['name'];
 
 if(!$lastUser) {
@@ -27,11 +29,16 @@ if(!$lastUser) {
 
                 $currentTimestamp = time();
 
+                $_SESSION['refreshtoken'] = $refreshToken;
+
                 // Es wird überprüft, ob das Access Token noch gültig ist
                 if ($currentTimestamp - $filetime >= $expirationTime) {
 
                     // Rufe die andere PHP-Datei auf, um das Token zu aktualisieren
-                    require "getRefreshedToken.php";
+                    
+                    header("Location: getRefreshedToken.php?wert=" . urlencode($refreshToken));
+                    session_abort();
+
                     exit();
 
                 } else {
@@ -46,4 +53,5 @@ if(!$lastUser) {
         }
     }
 }
+session_abort();
 ?>

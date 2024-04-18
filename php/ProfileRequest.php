@@ -1,7 +1,5 @@
 <?php
 
-require('refreshchecker.php');
-
 $lastUser = $_COOKIE['name'];
 
 if(!$lastUser) {
