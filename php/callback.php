@@ -56,6 +56,8 @@ if ($tokenResponse === false) {
 
     if (isset($tokenResponse['access_token'])) {
         $token = $tokenResponse['access_token'];
+        $refreshToken = $tokenResponse['refresh_token'];
+        $expTime = $tokenResponse['expires_in'] + time();
 
         $apiEndpointMe = 'https://osu.ppy.sh/api/v2/me';
 
@@ -86,6 +88,9 @@ if ($tokenResponse === false) {
 
             file_put_contents('UserDB/ApiTokens/request_' . $username . '.txt', $tokenResponseNormal);
             file_put_contents('UserDB/ApiRequestTime/time_' . $username . '.txt', time());
+
+            require("database.php");
+            addData($username, $refreshToken, $token, $expTime, json_encode($responseName));
             
             header('Location: ../html/index/index.html');
             exit();

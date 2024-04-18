@@ -31,27 +31,26 @@ $token = $responseData['access_token'];
 
 $apiEndpointMe = 'https://osu.ppy.sh/api/v2/me';
 
-$headers = [
-    'Content-Type: application/json',
-    'Accept: application/json',
-    "Authorization: Bearer $token"
+$options = [
+    'http' => [
+        'method' => 'GET',
+        'header' => [
+            'Content-Type: application/json',
+            'Accept: application/json',
+            "Authorization: Bearer $token"
+        ]
+    ]
 ];
 
-$ch = curl_init($apiEndpointMe);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, '');
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$context = stream_context_create($options);
 
-$responseMe = curl_exec($ch);
+$responseMe = file_get_contents($apiEndpointMe, false, $context);
 
 if ($responseMe === false) {
     http_response_code(401);
+    
+
     exit;
 }
 
-curl_close($ch);
-
 echo $responseMe;
-echo "answer";
-?>
